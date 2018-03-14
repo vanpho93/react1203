@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 
 export class ListWord extends Component {
-    render() {
-    return (
-            <div className="container">
-                <h3>{ this.props.title }</h3>
-                List Word
+    getFormHtml() {
+        if (!this.props.isShowForm) return '';
+        return (
+            <div>
                 <div className="form-group">
                     <label>En: </label>
                     <input className="form-control" />
@@ -14,7 +13,17 @@ export class ListWord extends Component {
                     <label>Vn: </label>
                     <input className="form-control" />
                 </div>
-                <button class="btn btn-success">Add word</button>
+                <button className="btn btn-success">Add word</button>
+            </div>
+        );
+    }
+
+    render() {
+        return (
+            <div className="container">
+                <h3>{ this.props.title }</h3>
+                List Word
+                { this.getFormHtml() }
             </div>
         );
     }
