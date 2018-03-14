@@ -11,10 +11,14 @@ class App extends Component {
     return (
       <div className="container">
         <h3>Value: {this.state.num}</h3>
-        <button className="btn btn-success">Increase</button>
+        <button className="btn btn-success" onClick={() => this.setState({ num: this.state.num + 1 })}>
+          Increase
+        </button>
         <br />
         <br />
-        <button className="btn btn-warning">Descrease</button>
+        <button className="btn btn-warning"  onClick={() => this.setState({ num: this.state.num - 1 })}>
+          Descrease
+        </button>
       </div>
     );    
   }
