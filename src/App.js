@@ -6,11 +6,11 @@ import { ListWord } from './ListWord';
 
 class App extends Component {
   render() {
-    const word1 = { en: 'One', vn: 'Mot' };
-    const word2 = { en: 'Two', vn: 'Hai' };
+    const word1 = { en: 'One', vn: 'Mot', isMemorized: true };
+    const word2 = { en: 'Two', vn: 'Hai', isMemorized: false };
     return (
       <div className="App">
-        <ListWord title="English - Vietnamese" />
+        <ListWord title="English - Vietnamese" isShowForm={false} />
         <Word wordInfo={word1} />
         <Word wordInfo={word2} />
       </div>
